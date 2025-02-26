@@ -26,7 +26,7 @@
             let assignedNumbers = JSON.parse(localStorage.getItem("assignedNumbers")) || [];
             let nextNumber = assignedNumbers.length + 1;
             
-            if (nextNumber <= 200) {
+            if (nextNumber <= 250) {
                 assignedNumbers.push(nextNumber);
                 localStorage.setItem("assignedNumbers", JSON.stringify(assignedNumbers));
                 document.getElementById("numero").innerText = nextNumber;
