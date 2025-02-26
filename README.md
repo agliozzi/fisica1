@@ -1,0 +1,1 @@
+Genera un numero casuale
