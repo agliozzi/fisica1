@@ -47,10 +47,7 @@
                 
                 // Mostra il numero aggiornato
                 document.getElementById("numero").innerText = counter;
-            } catch (error) {
-                document.getElementById("numero").innerText = "Errore!";
-                console.error("Errore:", error);
-            }
+            } 
         }
 
         async function updateNumber(newCounter, sha) {
@@ -82,9 +79,7 @@
                 const data = await response.json();
                 await updateNumber(0, data.sha);
                 document.getElementById("numero").innerText = "Reset completato!";
-            } catch (error) {
-                console.error("Errore nel reset:", error);
-            }
+            } 
         }
         
         document.getElementById("reset").addEventListener("click", resetCounter);
