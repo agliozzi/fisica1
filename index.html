@@ -29,8 +29,8 @@
     <button id="reset">Reset Contatore</button>
     
     <script>
-        const REPO_OWNER = "TUO_NOME_UTENTE_GITHUB";  // Cambia con il tuo username GitHub
-        const REPO_NAME = "NOME_DEL_TUO_REPOSITORY"; // Cambia con il nome del tuo repository
+        const REPO_OWNER = "agliozzi";  // Cambia con il tuo username GitHub
+        const REPO_NAME = "fisica1"; // Cambia con il nome del tuo repository
         const FILE_PATH = "counter.json"; 
         const TOKEN = "TUO_GITHUB_PERSONAL_ACCESS_TOKEN"; // Crea un token su GitHub con permessi per scrivere nel repo
 
@@ -46,9 +46,11 @@
                 const content = atob(data.content);
                 let counter = JSON.parse(content).counter;
                 
+                // Incrementa e aggiorna PRIMA di mostrarlo
                 counter++;
-                
                 await updateNumber(counter, data.sha);
+                
+                // Mostra il numero aggiornato
                 document.getElementById("numero").innerText = counter;
             } catch (error) {
                 document.getElementById("numero").innerText = "Errore!";
